@@ -77,19 +77,19 @@ public class OrderItemController {
         return ResponseEntity.ok(assembler.toModel((orderItem)));
     }
 
-    @GetMapping("/back/orders/{orderId}/items/{releaseId}/send")
+    @PutMapping("/back/orders/{orderId}/items/{releaseId}/send")
     public ResponseEntity<?> send(@PathVariable long orderId, @PathVariable long releaseId) {
         OrderItem sent = service.setStatusToSent(orderId, releaseId);
         return ResponseEntity.ok(assembler.toModel(sent));
     }
 
-    @GetMapping("/back/orders/{orderId}/items/{releaseId}/cancel")
+    @PutMapping("/back/orders/{orderId}/items/{releaseId}/cancel")
     public ResponseEntity<?> cancel(@PathVariable long orderId, @PathVariable long releaseId) {
         OrderItem canceled = service.setStatusToCanceled(orderId, releaseId);
         return ResponseEntity.ok(assembler.toModel(canceled));
     }
 
-    @GetMapping("/back/orders/{orderId}/items/{releaseId}/receive")
+    @PutMapping("/back/orders/{orderId}/items/{releaseId}/receive")
     public ResponseEntity<?> receive(@PathVariable long orderId, @PathVariable long releaseId) {
         OrderItem received = service.setStatusToComplete(orderId, releaseId);
         return ResponseEntity.ok(assembler.toModel(received));
