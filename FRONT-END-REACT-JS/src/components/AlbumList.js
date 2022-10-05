@@ -18,6 +18,10 @@ const List = (props) => {
               <p>
                 <span className='album-description'>{album.info}</span>
               </p>
+              <p><b>Links:</b> 
+                <a href={album._links['List of all releases in the store for this album'].href} >Releases for this album</a> | 
+                <a href={album._links['Info about the artist'].href}>Info about the artist</a>
+              </p>
               <br />
             </div>
         );

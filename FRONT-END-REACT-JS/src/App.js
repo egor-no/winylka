@@ -1,11 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
-import List from './components/List';
+import List from './components/AlbumList';
 
 function App() {
-  const [appState, setAppState] = useState({
-    albums: null,
-  });
+  const [appState, setAppState] = useState({});
 
   useEffect(() => {
     const apiUrl = `http://localhost:8090/store/albums`;
