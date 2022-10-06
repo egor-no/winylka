@@ -1,13 +1,8 @@
 import React from 'react';
 import { BsFillVinylFill} from 'react-icons/bs';
 
-function List (props) {
-  const { albums } = props;
-  if (!albums || albums.length === 0) return <p>No albums in the store, sorry</p>;
-  return (
-    <div> 
-      <h2 className='list-head'>Available Albums</h2>
-      {albums.map((album) => {
+function AlbumCard (item) {
+        const {album} = item; 
         return (
              <div key={album.albumId}>
              {album.albumId !== 1 && <BsFillVinylFill />}
@@ -25,8 +20,5 @@ function List (props) {
               <br />
             </div>
         );
-      })}
-    </div>
-  );
-};
-export default List;
+}
+export default AlbumCard;

@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import List from './components/AlbumList';
+import CardList from './components/CardList'
+import AlbumCard from './components/AlbumCard';
 
 function App() {
-  const [appState, setAppState] = useState({});
+  const [appState, setAppState] = useState({
+    albums: [],
+  });
 
   useEffect(() => {
     const apiUrl = `http://localhost:8090/store/albums`;
@@ -21,7 +25,7 @@ function App() {
         <hr />
       </div>
       <div className='container'>
-        <List albums={appState.albums} />
+        <CardList Component={AlbumCard} data={appState.albums} />
       </div>
       <footer>
         <div className='footer'>
